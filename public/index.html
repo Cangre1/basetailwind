@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Meikle - Bienes Raíces - Uruguay</title>
+  <meta name="description" content="Basic HTML/Tailwind starter" />
+  <meta name="author" content="Daily Dev Tips" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- Main Contenedor -->
+  <div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-orange-meikle absolute w-full z-50 shadow-2xl">
+      <!-- Preheader -->
+      <div class="bg-gray-meikle py-1 z-[60] hidden md:block relative ">
+        <div class="container mx-auto px-4 flex items-end justify-end">
+          <!-- Número de teléfono y enlaces a redes sociales -->
+          <div class="flex items-center">
+            <!-- Whatsapp -->
+            <a href="#" class="text-gray-300 font-medium mr-2 opacity-90 hover:opacity-100">
+              <img class="h-4" src="./img/icono-whatsapp.svg" />
+            </a>
+            <a href="tel:099187616"
+              class="text-blue-dark-meikle font-BasisGrotesquePro text-base mr-6 opacity-90 hover:opacity-100">
+              099 187 616
+            </a>
+
+            <!-- Teléfono -->
+            <a href="#" class="text-gray-300 font-medium mr-2 opacity-90 hover:opacity-100">
+              <img class="h-4" src="./img/icono-telefono.svg" />
+            </a>
+            <a href="tel:099187616"
+              class="text-blue-dark-meikle font-BasisGrotesquePro text-base mr-6 opacity-90 hover:opacity-100">
+              2600 1747
+            </a>
+
+            <a href="#" class="text-gray-300 font-medium mr-4 hover:text-white">
+              <img class="h-4" src="./img/icono-instagram.svg" />
+            </a>
+            <a href="#" class="text-gray-300 font-medium mr-4 hover:text-white">
+              <img class="h-4" src="./img/icono-linkedin.svg" />
+            </a>
+            <svg class="h-full w-1 mr-4" viewBox="0 0 1 5">
+              <rect x="0" y="0" width="0.2" height="5" fill="#363d3d" />
+            </svg>
+            <a href="#" class="text-gray-300 font-medium mr-2 hover:text-white">
+              <img class="h-4" src="./img/icono-idioma.svg" />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor para la barra de navegación -->
+      <div class="container mx-auto px-5 text-white">
+        <!-- Barra de navegación -->
+        <nav class="flex items-center justify-between">
+          <!-- icono whatsapp mobile -->
+          <a href="#" class="align-self-start font-bold text-xl tracking-tight text-white md:hidden">
+            <img src="./img/iconos/icono-whatsapp-white.svg" alt="Meikle - Bienes Raíces - Uruguay" class="h-6 w-auto" />
+          </a>
+          <!-- Logotipo -->
+          <a href="#" class="align-self-start font-bold text-xl tracking-tight text-white">
+            <img src="./img/meikle-logo-white.svg" alt="Meikle - Bienes Raíces - Uruguay" class="h-8 w-auto" />
+          </a>
+          <!-- Nav -->
+          <div class="nav-items flex">
+            <!-- Enlaces de navegación -->
+            <div class="hidden md:flex md:items-center pr-6">
+              <a href="/propiedades.html" data-submenu="submenu-venta" class="font-BasisGrotesquePro text-base leading-6 text-white hover:text-white mr-6 pt-5 pb-4 opacity-80 border-b-4 border-b-transparent hover:border-b-white hover:opacity-100 transition ease-in-out duration-300">
+                Venta
+              </a>
+              <a href="/propiedades.html" data-submenu="submenu-compra" class="font-BasisGrotesquePro text-base leading-6 text-white hover:text-white mr-6 pt-5 pb-4 opacity-80 border-b-4 border-b-transparent hover:border-b-white hover:opacity-100 transition ease-in-out duration-300">Alquiler</a>
+              <a href="/home-proyectos.html" class="font-BasisGrotesquePro text-base leading-6 text-white hover:text-white mr-6 pt-5 pb-4 opacity-80 border-b-4 border-b-transparent hover:border-b-white hover:opacity-100 transition ease-in-out duration-300">Proyectos</a>
+              <a href="/" class="font-BasisGrotesquePro text-base leading-6 text-white hover:text-white mr-6 pt-5 pb-4 opacity-80 border-b-4 border-b-transparent hover:border-b-white hover:opacity-100 transition ease-in-out duration-300">Campos</a>
+              <a href="/" class="font-BasisGrotesquePro text-base leading-6 text-white hover:text-white mr-6 pt-5 pb-4 opacity-80 border-b-4 border-b-transparent hover:border-b-white hover:opacity-100 transition ease-in-out duration-300">Nosotros</a>
+            </div>
+            <!-- Menú hamburguesa para pantallas pequeñas -->
+            <div class="py-5">
+              <button id="menu-button"
+                class=" z-[100] h-6 w-auto  text-white hover:text-white focus:text-white focus:outline-none">
+                <img src="./img/icono-menulateral.svg" alt="Meikle - Bienes Raíces - Uruguay" class="img-icon h-4 w-auto" />
+              </button>
+              <!-- <button id="menu-button" class="focus:outline-none block md:hidden" >
+                <svg class="h-6 w-6 fill-current img-icon" viewBox="0 0 24 24">
+                  <path id="icon" d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z" class=""/>
+                  <path id="icon-active" d="M18.1,16.9l-1.4-1.4L11,14.3l-4.7-4.7L5,10.6L10.6,5l4.7,4.7l-4.7,4.7l1.4,1.4L14.3,13L18.1,16.9z" class="hidden"/> -->
+                </svg>
+              </button>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Contenedor para el menú lateral -->
+      <!-- Menú lateral -->
+      <div class="menu menu-hidden h-screen bg-white drop-shadow-2xl fixed top-[64px] md:top-0 right-0 z-50 w-full md:w-1/3 xl:w-1/4 md:rounded-bl-[6rem]">
+        <div class="container mx-auto h-full flex flex-col items-end pt-12 pb-4 px-5 md:px-12 2xl:px-16">
+
+          <!-- Fila con icono de cruz -->
+          <div class="hidden md:flex justify-end">
+            <button id="close-button" class="text-white hover:text-white focus:text-white focus:outline-none">
+              <img src="./img/Iconos/close-icon.svg" alt="Cerrar menú" class="h-5 w-auto" />
+            </button>
+          </div>
+
+          <hr class="hidden md:block h-0.2 bg-gray-meikle w-full mt-4 mb-4 2xl:mt-6 2xl:mb-6">
+
+          <!-- Fila con nav -->
+          <ul class="text-right">
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle font-medium text-2xl 2xl:text-3xl">Inicio</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle font-medium text-2xl 2xl:text-3xl">Propiedades</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Barrios con seguridad</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Edificios y Proyectos</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Proyectos logisticos</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Apartamentos</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Casas</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Terrenos</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Locales</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Locales industriales</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle text-md 2xl:text-lg">Oficinas</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle font-medium text-2xl 2xl:text-3xl">Campos & Chacras</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle font-medium text-2xl 2xl:text-3xl">Nosotros</a>
+            </li>
+            <li class="py-0.5 2xl:py-1">
+              <a href="#" class="text-blue-dark-meikle font-medium text-2xl 2xl:text-3xl">Contacto</a>
+            </li>
+          </ul>
+
+          <hr class="h-0.2 bg-gray-meikle w-full mt-4 mb-4 2xl:mt-6 2xl:mb-6">
+
+          <!-- Fila con iconos de redes sociales -->
+          <div class="grid justify-end text-right">
+            <p class="pb-2 font-medium text-md 2xl:text-lg">Seguinos</p>
+            <div class="flex justify-center items-center">
+              <a href="#" class="text-gray-300 hover:text-white">
+                <img src="./img/icono-instagram.svg" alt="Instagram" class="h-5 w-auto mr-4" />
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white">
+                <img src="./img/icono-facebook.svg" alt="LinkedIn" class="h-5 w-auto mr-4" />
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white">
+                <img src="./img/icono-linkedin.svg" alt="LinkedIn" class="h-5 w-auto mr-4" />
+              </a>
+              <a href="#" class="text-gray-300 hover:text-white">
+                <img src="./img/icono-youtube.svg" alt="LinkedIn" class="h-5 w-auto" />
+              </a>
+            </div>
+          </div>
+
+          <hr class="h-0.2 bg-gray-meikle w-full mt-4 mb-4 2xl:mt-6 2xl:mb-6">
+
+          <!-- Fila con idiomas -->
+          <div class="flex justify-center">
+            <a href="#" class="text-blue-dark-meikle font-medium hover:text-white">ESP</a>
+            <span class="mx-2 text-blue-dark-meikle">|</span>
+            <a href="#" class="text-blue-dark-meikle font-medium hover:text-white">ENG</a>
+          </div>
+
+          <hr class="h-0.2 bg-gray-meikle w-full mt-4 mb-4 2xl:mt-6 2xl:mb-6">
+
+        </div>
+      </div>
+
+      <!-- Contenedor para el submenu VENTA-->
+      <div id="submenu-venta"
+        class="submenu bg-white top-[97px] left-0 rounded-br-[2rem] rounded-bl-[2rem] w-full z-40 hidden shadow-2xl py-4 px-4 absolute">
+        <!-- Contenido del submenú -->
+        <div class="flex container mx-auto">
+          <div class="w-1/4 p-4 grid border-r-gray-dark-meikle border-r">
+            <!-- Contenido de la primera columna -->
+            <a href="#">Casas en Carrasco</a>
+            <a href="#">Casas en Carrasco</a>
+          </div>
+
+          <div class="w-1/4 p-4 grid border-r-gray-dark-meikle border-r">
+            <!-- Contenido de la segunda columna -->
+            <a href="#">Casas en Carrasco</a>
+            <a href="#">Casas en Carrasco</a>
+          </div>
+
+          <div class="w-1/4 p-4 grid border-r-gray-dark-meikle border-r">
+            <!-- Contenido de la tercera columna -->
+            <a href="#">Casas en Carrasco</a>
+            <a href="#">Casas en Carrasco</a>
+          </div>
+          <div class="w-1/4 items-end p-4">
+            <!-- Contenido de la cuarta columna -->
+            <button href="#" class="bg-transparent text-orange-meikle font-medium text-lg py-2 px-4 rounded-full w-full border-orange-meikle border hover:bg-orange-meikle hover:text-white transition duration-300 ease-in-out">
+              Ver todas las propiedades
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenedor para el submenu -->
+      <div id="submenu-compra"
+        class="submenu absolute bg-white top-[97px] left-0 rounded-br-[2rem] rounded-bl-[2rem] w-full z-40 hidden shadow-2xl py-6 px-4">
+        <!-- Contenido del submenú -->
+        <div class="flex container mx-auto">
+          <div class="w-1/4 p-4 grid border-r-gray-dark-meikle border-r">
+            <!-- Contenido de la primera columna -->
+            <a href="#">Compra Casas en Carrasco</a>
+            <a href="#">Casas en Carrasco</a>
+          </div>
+
+          <div class="w-1/4 p-4 grid border-r-gray-dark-meikle border-r">
+            <!-- Contenido de la segunda columna -->
+            <a href="#">Casas en Carrasco</a>
+            <a href="#">Casas en Carrasco</a>
+          </div>
+
+          <div class="w-1/4 p-4 grid border-r-gray-dark-meikle border-r">
+            <!-- Contenido de la tercera columna -->
+            <a href="#">Casas en Carrasco</a>
+            <a href="#">Casas en Carrasco</a>
+          </div>
+          <div class="w-1/4 p-4">
+            <!-- Contenido de la cuarta columna -->
+            <!-- Contenido de la cuarta columna -->
+            <button href="#" class="bg-transparent text-orange-meikle font-medium text-lg py-2 px-4 rounded-full w-full border-orange-meikle border hover:bg-orange-meikle hover:text-white transition duration-300 ease-in-out">
+              Ver todas las propiedades
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1 overflow-auto pb-16">
+      <!-- Contenedor para el contenido principal -->
+
+      <!-- Swiper Hero Principal -->
+      <div class="swiper mySwiper rounded-bl-[6rem] rounded-br-[6rem]">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide min-h-[70vh] md:h-[100vh]">
+            <div class="overlay absolute top-0 left-0 w-full h-full bg-black opacity-20	"></div>
+            <div class="overlay absolute top-0 left-0 w-full h-[160px] bg-black opacity-25	"></div>
+            <img src="./img/img-hero-home@2x-100.jpg" alt="Imagen 1" class="w-full h-full object-cover mx-auto my-auto h-full" />
+            <div class="absolute w-full h-full justify-center items-start top-48 z-50">
+              <h4 class="font-BasisGrotesquePro text-white text-xl lg:text-2xl pb-4 font-normal">Proyectos destacados</h4>
+              <h1 class="font-Recoleta text-white sm:text-3xl md:text-4xl lg:text-7xl">Huerta de los Horneros</h1>
+            </div>
+          </div>
+          <div class="swiper-slide min-h-[70vh] md:h-[100vh]">
+            <div class="overlay absolute top-0 left-0 w-full h-full bg-black opacity-20	"></div>
+            <div class="overlay absolute top-0 left-0 w-full h-[160px] bg-black opacity-25	"></div>
+            <img src="./img/img-hero-home@2x-100.jpg" alt="Imagen 1" class="w-full h-full object-cover" />
+            <div class="absolute w-full h-full justify-center items-start top-48 z-50">
+              <h4 class="font-BasisGrotesquePro text-white text-xl lg:text-2xl pb-4 font-normal">Proyectos destacados</h4>
+              <h1 class="font-Recoleta text-white sm:text-3xl md:text-4xl lg:text-7xl">Huerta de los Horneros</h1>
+            </div>
+          </div>
+          <div class="swiper-slide min-h-[70vh] md:h-[100vh]">
+            <div class="overlay absolute top-0 left-0 w-full h-full bg-black opacity-20	"></div>
+            <div class="overlay absolute top-0 left-0 w-full h-[160px] bg-black opacity-25	"></div>
+            <img src="./img/img-hero-home@2x-100.jpg" alt="Imagen 1" class="w-full h-full object-cover" />
+            <div class="absolute w-full h-full justify-center items-start top-48 z-50">
+              <h4 class="font-BasisGrotesquePro text-white text-xl lg:text-2xl pb-4 font-normal">Proyectos destacados</h4>
+              <h1 class="font-Recoleta text-white sm:text-3xl md:text-4xl lg:text-7xl">Huerta de los Horneros</h1>
+            </div>
+          </div>
+          <div class="swiper-slide min-h-[70vh] md:h-[100vh]">
+            <div class="overlay absolute top-0 left-0 w-full h-full bg-black opacity-20	"></div>
+            <div class="overlay absolute top-0 left-0 w-full h-[160px] bg-black opacity-25	"></div>
+            <img src="./img/img-hero-home@2x-100.jpg" alt="Imagen 1" class="w-full h-full object-cover" />
+            <div class="absolute w-full h-full justify-center items-start top-48 z-50">
+              <h4 class="font-BasisGrotesquePro text-white text-xl lg:text-2xl pb-4 font-normal">Proyectos destacados</h4>
+              <h1 class="font-Recoleta text-white sm:text-3xl md:text-4xl lg:text-7xl">Huerta de los Horneros</h1>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="hidden lg:block search-container -mt-14 z-40 relative">
+        <div class="container max-w-6xl mx-auto search-form rounded-[2rem] h-28 bg-white shadow-xl px-10 flex items-center justify-center">
+          <form class="form-search flex">
+            <div class="">
+              <select class="form-select bg-gray-form rounded-xl py-4 px-4 mr-4 text-xl arrow-select"
+                id="property-type">
+                <option>Operacion</option>
+                <option>Apartamento</option>
+                <option>Casa</option>
+                <option>Terreno</option>
+                <option>Local</option>
+              </select>
+            </div>
+            <div class="">
+              <select class="form-select  bg-white rounded-xl py-4 px-4 mr-4 text-xl arrow-select"
+                id="location">
+                <option>Tipo de propiedad</option>
+                <option>Apartamento</option>
+                <option>Casa</option>
+                <option>Terreno</option>
+                <option>Local</option>
+              </select>
+            </div>
+            <div class="">
+              <select class="form-select bg-white rounded-xl py-4 px-4 mr-4 text-xl arrow-select"
+                id="price-range">
+                <option>Zona Barrio</option>
+                <option>Montevideo</option>
+                <option>Canelones</option>
+                <option>Maldonado</option>
+                <option>Rocha</option>
+              </select>
+            </div>
+            <div class="">
+              <select class="form-select bg-white rounded-xl py-4 px-4 mr-4 text-xl arrow-select"
+                id="bedrooms">
+                <option>Precio</option>
+                <option>Menos de $100,000</option>
+                <option>$100,000 - $250,000</option>
+                <option>$250,000 - $500,000</option>
+                <option>Más de $500,000</option>
+              </select>
+            </div>
+            <button type="submit"
+              class="btn-search bg-orange-meikle text-2xl tracking-wide font-Recoleta rounded-xl py-2 px-10 text-white focus:outline-none focus:shadow-outline uppercase">Buscar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container mx-auto px-5">
+        <!-- Aquí iría tu contenido principal -->
+
+        <!--BARRIOS CLASICOS START-->
+        <div class="mx-auto flex justify-between items-center py-3 md:py-5 pt-16 md:pt-20 xl:pr-5 pr-0 xl:pl-0">
+          <h1 class="font-Recoleta text-3xl xl:text-5xl 2xl:text-5xl text-blue-meikle">Barrios Clásicos</h1>
+          <p class="text-md md:text-lg">ver más</p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-2 mx-auto gap-6 pt-6 md:pt-10">
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class="aspect-square brightness-90 shadow-2xl  " src="./img/CARRASCO.jpg" alt="" />
+                <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                  Carrasco
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class="aspect-square brightness-90 shadow-2xl" src="./img/CARRASCO ESTE.jpg" alt="" />
+              <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                Carrasco Este
+              </p>
+              </div>
+            </div>
+          </a>
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class="aspect-square brightness-90 shadow-2xl" src="./img/BARRIOS CON SEGURIDAD.jpg"
+                alt="" />
+                <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                  Barrios con <br />
+                  privacidad
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class="aspect-square brightness-90 shadow-2xl" src="./img/CARRASCO.jpg" alt="" />
+                <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                  Zona Barrios
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class="aspect-square brightness-90 shadow-2xl" src="./img/POCITOS.jpg" alt="" />
+              <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                Pocitos
+              </p>
+              </div>
+            </div>
+          </a>
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class="aspect-square brightness-90 shadow-2xl hover:scale-125 transition duration-300 ease-in-out" src="./img/CARRASCO.jpg" alt="" />
+                <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                  Punta Carretas
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class=" aspect-square brightness-90 shadow-2xl" src="./img/CARRASCO.jpg" alt="" />
+                <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                  Buceo
+                </p>
+              </div>
+            </div>
+          </a>
+          <a href="/propiedades.html">
+            <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+              <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+                <img class="aspect-square brightness-90 shadow-2xl" src="./img/CARRASCO.jpg" alt="" />
+              <p class="absolute text-center font-Recoleta text-white text-2xl xl:text-3xl 2xl:text-4xl">
+                La Caleta
+              </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!--BARRIOS CLASICOS END-->
+
+        <!--PROYECTOS & EDIFICIOS START-->
+        <div class="mx-auto flex justify-between items-center py-5 pt-28 xl:pr-5 pr-0 xl:pl-0 md:pl-5">
+          <h1 class="font-Recoleta text-3xl xl:text-5xl 2xl:text-5xl text-blue-meikle">Proyectos y edificios</h1>
+          <p class="text-md md:text-lg">ver más</p>
+        </div>
+        
+        
+        <div class="grid grid-cols-3 mx-auto gap-6 pb-28 pt-10">
+          <!--1-->
+          <div class="grid grid-cols-2">
+            <div class="aspect-square">
+              <img src="./img/proyectos y edificios/HUERTAS DE LOS HORNEROS.jpg" alt=""
+                class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+            </div>
+            <div class="font-Recoleta flex flex-col justify-center items-center gap-2 px-5">
+              <h1 class="text-2xl font-bold">Huertas de los Horneros</h1>
+              <p class="text-xl">Camino de los Horneros, Canelones</p>
+            </div>
+          </div>
+
+          <!--2-->
+          <div class="grid grid-cols-2">
+            <div class="aspect-square">
+              <img src="./img/proyectos y edificios/RIBA.jpg" alt=""
+                class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+            </div>
+            <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+              <h1 class="text-2xl font-bold">Riba</h1>
+              <p class="text-xl">Avenida de la Playa, Canelones</p>
+            </div>
+          </div>
+
+          <!--3-->
+          <div class="grid grid-cols-2">
+            <div class="aspect-square">
+              <img src="./img/proyectos y edificios/HUERTAS DE LOS HORNEROS.jpg" alt=""
+                class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+            </div>
+            <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+              <h1 class="text-2xl font-bold">Huertas de los Horneros</h1>
+              <p class="text-xl">Camino de los Horneros, Canelones</p>
+            </div>
+          </div>
+
+          <!--4-->
+          <div class="grid grid-cols-2">
+            <div class="aspect-square">
+              <img src="./img/proyectos y edificios/WELL.jpg" alt=""
+                class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+            </div>
+            <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+              <h1 class="text-2xl font-bold">Well</h1>
+              <p class="text-xl">Barrio LAGOS, Canelones</p>
+            </div>
+          </div>
+
+          <!--5-->
+          <div class="grid grid-cols-2">
+            <div class="aspect-square">
+              <img src="./img/proyectos y edificios/ZEN.jpg" alt=""
+                class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+            </div>
+            <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+              <h1 class="text-2xl font-bold">Costanera Village</h1>
+              <p class="text-xl">Rambla Costanera, Barra de Carrasco</p>
+            </div>
+          </div>
+
+          <!--6-->
+          <div class="grid grid-cols-2">
+            <div class="aspect-square">
+              <img src="./img/proyectos y edificios/ANDIKO.jpg" alt=""
+                class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+            </div>
+            <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+              <h1 class="text-2xl font-bold">Andiko</h1>
+              <p class="text-xl">Barra de Carrasco Canelones</p>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="swiper mySwiper2 sw w-full ">
+
+          <div class="swiper-wrapper w-full grid grid-cols-3 gap-10 pt-10" style="display: grid;">
+            
+
+              <div class="grid grid-cols-2 swiper-slide sw-sl">
+                <div class="aspect-square">
+                  <img src="./img/proyectos y edificios/HUERTAS DE LOS HORNEROS.jpg" alt=""
+                    class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+                </div>
+                <div class="font-Recoleta flex flex-col justify-center items-center gap-2 px-5">
+                  <h1 class="text-2xl font-bold">Huertas de los Horneros</h1>
+                  <p class="text-xl">Camino de los Horneros, Canelones</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 swiper-slide sw-sl">
+                <div class="aspect-square">
+                  <img src="./img/proyectos y edificios/RIBA.jpg" alt=""
+                    class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+                </div>
+                <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+                  <h1 class="text-2xl font-bold">Riba</h1>
+                  <p class="text-xl">Avenida de la Playa, Canelones</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 swiper-slide sw-sl">
+                <div class="aspect-square">
+                  <img src="./img/proyectos y edificios/HUERTAS DE LOS HORNEROS.jpg" alt=""
+                    class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+                </div>
+                <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+                  <h1 class="text-2xl font-bold">Huertas de los Horneros</h1>
+                  <p class="text-xl">Camino de los Horneros, Canelones</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 swiper-slide sw-sl">
+                <div class="aspect-square">
+                  <img src="./img/proyectos y edificios/WELL.jpg" alt=""
+                    class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+                </div>
+                <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+                  <h1 class="text-2xl font-bold">Well</h1>
+                  <p class="text-xl">Barrio LAGOS, Canelones</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 swiper-slide sw-sl">
+                <div class="aspect-square">
+                  <img src="./img/proyectos y edificios/ZEN.jpg" alt=""
+                    class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+                </div>
+                <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+                  <h1 class="text-2xl font-bold">Costanera Village</h1>
+                  <p class="text-xl">Rambla Costanera, Barra de Carrasco</p>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 swiper-slide sw-sl">
+                <div class="aspect-square">
+                  <img src="./img/proyectos y edificios/ANDIKO.jpg" alt=""
+                    class="h-full object-cover rounded-2xl brightness-75 shadow-2xl" />
+                </div>
+                <div class="font-Recoleta flex flex-col justify-center items-start gap-2 px-5">
+                  <h1 class="text-2xl font-bold">Andiko</h1>
+                  <p class="text-xl">Barra de Carrasco Canelones</p>
+                </div>
+              </div>
+              
+           
+          </div>
+          -->
+        
+        <!--PROYECTOS & EDIFICIOS END-->
+
+        <!--INMUEBLES PARA EMPRESAS START-->
+        <div class="mx-auto flex justify-between items-center py-5 pt-28 xl:pr-5 pr-0 xl:pl-0 md:pl-5">
+          <h1 class="font-Recoleta text-3xl xl:text-5xl 2xl:text-5xl text-blue-meikle">Inmuebles para Empresas</h1>
+          <p class="text-md md:text-lg">ver más</p>
+
+          
+        </div>
+        
+        <div class="grid grid-cols-4 grid-rows-1 mx-auto gap-6 pb-28 pt-10">
+          <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+            <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+              <img class="rounded-3xl aspect-square brightness-75 shadow-2xl object-cover"
+              src="./img/Inmuebles para empresas/Oficina.jpg" alt="" />
+              <p class="absolute text-center font-Recoleta text-white text-3xl">
+                Oficinas
+              </p>
+            </div>
+          </div>
+          <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+            <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+              <img class="rounded-3xl aspect-square brightness-75 shadow-2xl object-cover"
+              src="./img/Inmuebles para empresas/Local comercial.jpg" alt="" />
+              <p class="absolute text-center font-Recoleta text-white text-3xl">
+                Locales <br />
+                Comerciales
+              </p>
+            </div>
+          </div>
+          <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+            <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+              <img class="rounded-3xl aspect-square brightness-75 shadow-2xl"
+              src="./img/Inmuebles para empresas/Logistica.jpg" alt="" />
+              <p class="absolute text-center font-Recoleta text-white text-3xl">
+                Locales <br />
+                Industriales
+              </p>
+            </div>
+          </div>
+          <div class="relative flex justify-center items-center cursor-pointer overflow-hidden rounded-3xl">
+            <div class="wrapper-content relative flex justify-center items-center hover:scale-125 transition duration-300 ease-in-out">
+              <img class="rounded-3xl aspect-square brightness-75 shadow-2xl object-cover"
+              src="./img/Inmuebles para empresas/Oficina.jpg" alt="" />
+              <p class="absolute text-center font-Recoleta text-white text-3xl">
+                Terrenos para <br />
+                empresas
+              </p>
+            </div>
+          </div> 
+        </div>
+        <!--INMUEBLES PARA EMPRESAS END-->
+
+        <!--CAMPOS Y CHACRAS START-->
+        <div class="h-[35rem] grid grid-cols-12 bg-bottom bg-cover rounded-[3rem] shadow-2xl"
+          style="background-image: url('./img/Campos/Campo.png')">
+          <div
+            class="col-span-8 md:col-span-5 flex flex-col xl:justify-center justify-end xl:mb-0 mb-20 items-center gap-5 font-Recoleta text-white">
+            <div>
+              <h1 class="text-5xl lg:text-7xl">
+                Campos <br />
+                y Chacras
+              </h1>
+            </div>
+
+            <a href="" class="bg-[#be5124] hover:bg-[#cd673c] py-3 px-1 rounded-full duration-500">
+              <p class="text-xl lg:text-3xl px-10">ver cartera de tierras</p>
+            </a>
+          </div>
+          <div class="col-span-1"></div>
+          <div class="col-span-1"></div>
+        </div>
+        <!--CAMPOS Y CHACRAS END-->
+
+      </div>
+    </main>
+  </div>
+  
+
+  <footer class="footer_meikle overflow-hidden">
+
+    <section class="bg-white py-12">
+      <div class="container mx-auto px-4 text-center text-black">
+        <div class="flex justify-between items-center">
+          <h2 class="text-4xl font-bold text-blue-dark-meikle text-left font-BasisGrotesquePro">Registrate para recibir
+            novedades</h2>
+          <form class="flex items-center justify-center">
+            <input class="bg-gray-200 rounded-xl -mr-4 text-xl py-4 px-12 focus:outline-none focus:shadow-outline"
+              type="email" placeholder="Ingresá tu email" />
+            <button
+              class="bg-orange-meikle text-xl font-Recoleta rounded-xl py-4 px-12 text-white focus:outline-none focus:shadow-outline">REGISTRARME</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contenedor para el pie de página -->
+    <div class="bg-gray-meikle text-blue-dark-meikle">
+      <div class="container mx-auto px-4 py-20">
+        <!-- Aquí iría tu contenido de pie de página -->
+
+        <!-- INFO MEIKLE -->
+        <div class="grid grid-cols-6 gap-5">
+          <!-- COLUMNAS -->
+          <div class="col-span-6 md:col-span-2">
+            <img src="./img/meikle-logo-orange.svg" class="h-12 mb-8" alt="" />
+            <p class="text-lg leading-loose text-blue-dark-meikle">
+              38 años guiando experiencias en el rubro
+              inmobiliario. Con una identidad y estilo
+              único en asesoramiento en bienes raices.
+            </p>
+          </div>
+          <div class="col-span-6 md:col-span-1"></div>
+          <div class="col-span-3 md:col-span-1">
+            <h4 class="font-BasisGrotesquePro text-2xl pb-4 font-medium">Menú</h4>
+            <p class="text-lg pb-2">Nosotros</p>
+            <p class="text-lg pb-2">Propiedades</p>
+            <p class="text-lg pb-2">Contacto</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h4 class="font-BasisGrotesquePro text-2xl pb-4 font-medium">Contactanos</h4>
+            <p class="text-lg pb-2">2600 1747</p>
+            <p class="text-lg pb-2">099 187 616</p>
+            <p class="text-lg pb-2">meikle@mkl.com.uy</p>
+          </div>
+          <div class="col-span-6 md:col-span-1">
+            <h4 class="font-BasisGrotesquePro text-2xl pb-4 font-medium">Seguinos</h4>
+            <p class="text-lg pb-2">Enterate las últimas noticias
+              y oportunidades en:</p>
+            <div class="flex">
+              <img src="./img/icono-instagram.svg" class="h-6 mr-4" alt="" />
+              <img src="./img/icono-facebook.svg" class="h-6 mr-4" alt="" />
+              <img src="./img/icono-linkedin.svg" class="h-6 mr-4" alt="" />
+              <img src="./img/icono-youtube.svg" class="h-6" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-blue-meikle text-white">
+      <div class="container mx-auto px-4">
+        <!-- LINKS A BÚSQUEDAS -->
+        <div class="grid grid-cols-6 gap-5 md:grid-cols-6 row-gap-6 pt-16 pb-12">
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Casas en carrasco</h5>
+            <p class="text-sm pb-1 font-light">Venta en Carrasco</p>
+            <p class="text-sm font-light">Alquiler en Carrasco</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Apartamentos en Carrasco</h5>
+            <p class="text-sm font-light pb-1">Venta en Carrasco</p>
+            <p class="text-sm font-light">Alquiler en Carrasco</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Proyectos en Carrasco
+              este a estrenar</h5>
+            <p class="text-sm font-light pb-1">Ver opciones</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Oficinas</h5>
+            <p class="text-sm font-light pb-1">Alquiler oficina en Carrasco</p>
+            <p class="text-sm font-light">Alquiler oficina en Ciudad Vieja</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Terrenos en Barrio con privacidad</h5>
+            <p class="text-sm font-light pb-1">Montevideo</p>
+            <p class="text-sm font-light">Canelones</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Campos y Chacras</h5>
+            <p class="text-sm font-light pb-1">Venta</p>
+            <p class="text-sm font-light">Arrendamiento</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Casas en Barrios con privacidad</h5>
+            <p class="text-sm font-light pb-1">Venta</p>
+            <p class="text-sm font-light">Alquiler</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Apartamentos
+              en Pocitos</h5>
+            <p class="text-sm font-light pb-1">Venta en Pocitos</p>
+            <p class="text-sm font-light">Alquiler en Pocitos</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Proyectos en Barrios
+              con privacidad</h5>
+            <p class="text-sm font-light pb-1">Ver opciones</p>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <h5 class="font-BasisGrotesquePro text-xl pb-1">Terrenos en Carrasco</h5>
+            <p class="text-sm font-light pb-1">Carrasco</p>
+            <p class="text-sm font-light">Carrasco Este</p>
+          </div>
+          <div class="col-span-3 md:col-span-1 flex items-end justify-end">
+            <div class="flex justify-center">
+              <a href="#" class="text-gray-300 hover:text-white px-1 border rounded-lg">ES</a>
+              <span class="mx-2 text-gray-300">|</span>
+              <a href="#" class="text-gray-300 hover:text-white">EN</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- COPYRIGHTS  -->
+        <div class="mx-auto md:flex text-center justify-between py-5 border-t-gray-100 border-t-[0.25px]">
+          <div>
+            <p class="text-sm">2022 - Meikle Bienes Raices | Todos los derechos reservados.</p>
+          </div>
+          <div>
+            <p class="text-sm">
+              <a href="#" class="">
+                DISEÑO SILVESTRE.UY
+              </a>
+              <a>| DESARROLLO SODIO</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </div>
+  <script src="./js/index.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      grabCursor: true,
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: ["-20%", 0, -1],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      },
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      slidesPerView: 1.4,
+        grid: {
+          rows: 2,
+        },
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2.2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2.5,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 3,
+          },
+        },
+      });
+  </script>
+</body>
+
+</html>
